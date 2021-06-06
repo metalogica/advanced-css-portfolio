@@ -1,0 +1,159 @@
+/*
+COLORS:
+
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+
+*/
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  /*font-size: 10px;*/
+  /* Accessibility: Set REM as % of the default font-size; fixed px width is not accessible. */
+  font-size: 62.5%;
+  /* Accessibility: 10px [desired] / 16px [default] = .625 [actual]*/ }
+
+body {
+  box-sizing: border-box;
+  /* Responsively set the total width and height of a box (content-box, padding-box) */ }
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px); }
+  80% {
+    transform: translateX(10px); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px); }
+  80% {
+    transform: translateX(-10px); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes rotateFull {
+  0% {
+    transform: rotate(0deg) scale(1); }
+  50% {
+    transform: rotate(180deg) scale(2); }
+  100% {
+    transform: rotate(360deg) scale(1); } }
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(30px); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.7;
+  color: #777;
+  padding: 3rem; }
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  backface-visibility: hidden;
+  /* fixes glitches in child component (.btn) that has animations */ }
+  .heading-primary--main {
+    display: block;
+    font-size: 6.0rem;
+    font-weight: 700;
+    letter-spacing: 3.5rem;
+    animation-name: moveInLeft;
+    animation-duration: 0.8s;
+    animation-timing-function: ease-out;
+    /*animation-delay: 3s;*/
+    /*animation-iteration-count: 2;*/ }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2.0rem;
+    font-weight: 400;
+    letter-spacing: 1.6rem;
+    animation: moveInRight 0.8s ease-out; }
+
+.header {
+  position: relative;
+  height: 95vh;
+  background-image: linear-gradient(315deg, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  /* gradient (top, left, bottom) */
+  background-size: cover;
+  /* Responsively sets the bg image width to container width */
+  background-position: top;
+  /* Sets the top of the image to aleways be the page top (bottom, center) */
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
+  .header__logo-box {
+    position: absolute;
+    top: 4.0rem;
+    left: 4.0rem;
+    height: 3.5rem; }
+  .header__logo {
+    height: 3.5rem; }
+  .header__logo:hover {
+    animation: rotateFull 1s linear; }
+  .header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; }
+
+.btn {
+  /* Treated as child of parent */ }
+  .btn:link, .btn:visited {
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 1.5rem 4.0rem;
+    display: inline-block;
+    border-radius: 10.0rem;
+    transition: all 0.25s;
+    position: relative;
+    font-size: 1.2rem; }
+  .btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+  .btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+  .btn::after {
+    content: "";
+    display: inline-block;
+    /* because parent is inline block */
+    width: 100%;
+    height: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s; }
+  .btn--white {
+    background-color: #fff;
+    color: #777; }
+  .btn--white::after {
+    background-color: #fff; }
+  .btn--white:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0; }
+  .btn--animated {
+    animation: moveInBottom .5s ease-out .5s;
+    /* animation-name, animation-time, animation-function, animation-delay*/
+    animation-fill-mode: backwards; }
