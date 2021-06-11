@@ -7,8 +7,8 @@
 }
 
 html {
-  /*font-size: 10px;*/ /* Accessibility: Set REM as % of the default font-size; fixed px width is not accessible. */
-  font-size: 62.5%; /* Accessibility: 10px [desired] / 16px [default] = .625 [actual]*/
+  // defines what 1 rem is.
+  font-size: 62.5%;
 }
 
 body {
