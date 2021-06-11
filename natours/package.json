@@ -4,12 +4,14 @@
   "description": "Natours landing page",
   "main": "index.js",
   "scripts": {
-    "compile:sass": "node-sass sass/main.scss css/style.css"
+    "sass:compile": "sass sass/main.scss css/style.css",
+    "sass:watch": "onchange sass/**/*.scss -- npm run sass:compile"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "node-sass": "^4.12.0"
+    "node-sass": "^4.12.0",
+    "onchange": "^7.1.0"
   },
   "dependencies": {}
 }
