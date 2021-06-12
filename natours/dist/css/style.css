@@ -12,7 +12,6 @@ html {
 
 body {
   box-sizing: border-box;
-  /* Responsively set the total width and height of a box (content-box, padding-box) */
 }
 
 @keyframes moveInLeft {
@@ -97,6 +96,73 @@ body {
   animation: moveInRight 0.8s ease-out;
 }
 
+.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  display: inline-block;
+  color: transparent;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -ms-background-clip: text;
+  -o-background-clip: text;
+  background-clip: text;
+  letter-spacing: 0.2rem;
+  transition: all 0.2s;
+}
+.heading-secondary:hover {
+  transform: skewY(2deg) skewX(15deg) scale(1.1);
+  text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.heading-tertiary {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.paragraph {
+  font-size: 1.6rem;
+}
+.paragraph:not(:last-child) {
+  margin-bottom: 3rem;
+}
+
+.u-center-text {
+  text-align: center;
+}
+
+.u-margin-bottom-small {
+  margin-bottom: 1.5rem;
+}
+
+.u-margin-bottom-medium {
+  margin-bottom: 4rem;
+}
+
+.u-margin-bottom-big {
+  margin-bottom: 8rem;
+}
+
+.u-padding-all-small {
+  padding: 1.5rem;
+}
+
+.u-padding-all-medium {
+  padding: 4rem;
+}
+
+.u-padding-all-large {
+  padding: 6rem;
+}
+
+.section-about {
+  background-color: #f7f7f7;
+  padding: 23rem 0;
+  margin-top: -20vh;
+}
+
 .header {
   position: relative;
   height: 95vh;
@@ -140,14 +206,12 @@ body {
 }
 .row [class^=col-] {
   float: left;
-  background-color: orangered;
 }
 .row [class^=col-]:not(:last-child) {
   margin-right: 6rem;
 }
 .row .col-1-of-2 {
   width: calc((100% - 6rem) / 2);
-  background-color: orangered;
 }
 .row .col-1-of-3 {
   width: calc((100% - 2 * 6rem) / 3);
@@ -214,6 +278,48 @@ body {
   animation: moveInBottom 0.5s ease-out 0.5s;
   /* animation-name, animation-time, animation-function, animation-delay*/
   animation-fill-mode: backwards;
+}
+
+.btn-text:link, .btn-text:visited {
+  font-size: 1.6rem;
+  color: #55c57b;
+  display: inline-block;
+  text-decoration: none;
+  border-bottom: 0.1rem solid #55c57b;
+  padding: 0.3rem;
+  transition: all 0.2s;
+}
+.btn-text:hover {
+  background-color: #55c57b;
+  color: #fff;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  transform: translateY(-0.2rem);
+}
+.btn-text:active {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  transform: translateY(0.2rem);
+}
+
+.composition {
+  position: relative;
+}
+.composition__photo {
+  width: 65%;
+  box-shadow: 1.5rem 5rem 4rem rgba(0, 0, 0, 0.4);
+  border-radius: 0.2rem;
+  position: absolute;
+}
+.composition__photo--p1 {
+  left: 0;
+  top: -2rem;
+}
+.composition__photo--p2 {
+  left: 0;
+  top: 8rem;
+}
+.composition__photo--p3 {
+  left: 0;
+  top: 16rem;
 }
 
 /*# sourceMappingURL=style.css.map */
