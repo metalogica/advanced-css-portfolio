@@ -49,6 +49,20 @@
     opacity: 0;
   }
 
+  &--green {
+    background-color: $color-primary;
+    color: $color-white;
+  }
+
+  &--green::after {
+    background-color: $color-primary;
+  }
+
+  &--green:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+  }
+
   &--animated {
     animation: moveInBottom .5s ease-out .5s; /* animation-name, animation-time, animation-function, animation-delay*/
     animation-fill-mode: backwards;
