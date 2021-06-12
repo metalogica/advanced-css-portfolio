@@ -1,6 +1,6 @@
 .row {
   max-width: $grid-with; // standard: 1140px , rem value = 140px/10rem_base = 114rem
-  background-color: #eee;
+  // background-color: #eee;
   margin: 0 auto;
   
   &:not(:last-child) {
