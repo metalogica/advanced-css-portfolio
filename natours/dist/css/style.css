@@ -387,7 +387,7 @@ body {
   color: white;
   font-size: 1.2rem;
   height: 50rem;
-  transition: all 0.5s ease-out;
+  transition: all 0.95s ease-out;
   border-radius: 0.3rem;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
   position: absolute;
@@ -397,6 +397,7 @@ body {
   backface-visibility: hidden;
 }
 .card__side--front {
+  transform: rotateY(0deg);
   background-color: #fff;
 }
 .card__side--back {
