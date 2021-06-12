@@ -9,6 +9,10 @@
   background-size: cover; /* Responsively sets the bg image width to container width */
   background-position: top; /* Sets the top of the image to aleways be the page top (bottom, center) */
 
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  -moz-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  -ms-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  -o-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 
   &__logo-box {
