@@ -1,10 +1,13 @@
 .navigation {
+  // HIDDEN: USED TO ACTIVATE: BACKGROUND + NAV_LIST
   &__checkbox {
     display: none;
   }
 
+  // THE VISIBLE NAV BUTTON
   &__button {
-    color: white;
+    background-color: $color-white;
+    color: $color-grey-light-1;
     height: 7rem;
     width: 7rem;
     position: fixed;
@@ -12,9 +15,14 @@
     right: 6rem;
     border-radius: 50%;
     z-index: 2000;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0rem 0.1rem 0.6rem rgba(0,0,0,0.1);
   }
 
+  // GRADIENT BACKGROUND APPEARS ON CLICK
   &__background {
+    // button background
     height: 6rem;
     width: 6rem;
     border-radius: 50%;
@@ -24,22 +32,29 @@
     background-image: radial-gradient($color-primary-light, $color-primary-dark);
     z-index: 1000;
 
-    transform: scale(80);
+    opacity: 0;
+    transform: scale(1);
+    transition: all 1s cubic-bezier(0.25, 1, 0.5, 1);
   }
 
+  // LINK LIST
   &__nav {
     height: 100vh;
-    width: 100%;
     position: fixed;
     top: 0;
-    right: 0;
+    left: 0;
     z-index: 1500;
+
+    transition: all .45s cubic-bezier(0,1.23,.24,1.22);
+    opacity: 0;
+    width: 0;
   }
 
   &__list {
     @include center-element;
 
     text-align: center;
+    width: 100%;
   }
   
   &__item {
@@ -47,6 +62,11 @@
     margin: 3rem;
   }
 
+  &__link-prefix {
+    margin-right: 1.125rem;
+  }
+
+  // ANIMATION ON LINKS
   &__link {
     &:link,
     &:visited {
@@ -54,25 +74,86 @@
       padding: 1rem 2rem;
       font-size: 3rem;
       font-weight: 300;
-      color: $color-white;
       text-decoration: none;
       text-transform: uppercase;
+
       background-image: linear-gradient(120deg, transparent 0%, transparent 50%, $color-white 50%);
-      // works with background-position for fill effect
       background-size: 250%;
+      
       transition: all .35s;
+      transform: none;
+      background-position: 0;
+      color: $color-white;
     }
 
     &:hover,
     &:active {
-      // works with background-size for fill effect
+      transition: all .35s;
+      transform: translateX(1rem);
       background-position: 100%;
       color: $color-primary;
-      transform: translateX(1rem);
     }
   }
 
-  &__link-prefix {
-    margin-right: 1.125rem;
+  // FUNCTIONALITY
+  // ON: Nav Click === &__checkbox:checked
+  &__checkbox:checked ~ &__background {
+    opacity: 1;
+    transform: scale(80);
+  }
+
+  // ON: Nav Click === &__checkbox:checked
+  &__checkbox:checked ~ &__nav {
+    opacity: 1;
+    width: 100%;
+  }
+
+  // ICON
+  &__icon {
+    position: relative;
+    margin-top: 3.6rem;
+
+    &,
+    &::before,
+    &::after {
+      display: inline-block;
+      width: 3rem;
+      height: .2rem;
+      background-color: $color-primary-dark;
+      transition: all .2s;
+    }
+ 
+    &::before,
+    &::after {
+      content: "";
+      position: absolute; 
+      left: 0;
+    }
+
+    // HAMBURGER TOP AND BOTTOM LINES
+    &::before { top: -1.15rem; transform-origin: center;}
+    &::after { top: 1.05rem; transform-origin: center; }
+  }
+  
+  // HAMBURGER HOVER: TOP AND BOTTOM LINES
+  &__button:hover &__icon::before { top: -1.15rem * 1.3 }
+  &__button:hover &__icon::after { top: 1.05rem * 1.3 }
+
+  // HIDE MIDDLE HAMBURGER ICON ON HOVER
+  // ON: Nav Click === &__checkbox:checked
+  &__checkbox:checked + &__button &__icon {
+    background-color: transparent;
+  }
+
+  // ROTATE HAMBURGER TOP LINE
+  &__checkbox:checked + &__button &__icon::before {
+    top: 0;
+    transform: rotate(180 - 45deg);
+  }
+
+  // ROTATE HAMBURGER BOTTOM LINE
+  &__checkbox:checked + &__button &__icon::after {
+    top: 0;
+    transform: rotate(180 - -45deg);
   }
 }

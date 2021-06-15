@@ -4,8 +4,8 @@
   "description": "Natours landing page",
   "main": "index.js",
   "scripts": {
-    "sass:compile": "sass ./sass/main.scss ../dist/css/style.css",
-    "sass:watch": "onchange ./sass/**/*.scss -- npm run sass:compile"
+    "sass:compile": "sass sass/main.scss ../dist/css/style.css",
+    "sass:watch": "onchange sass/**/*.scss -- npm run sass:compile"
   },
   "author": "metalogica",
   "license": "ISC",

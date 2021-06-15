@@ -749,7 +749,8 @@ body {
   display: none;
 }
 .navigation__button {
-  color: white;
+  background-color: #fff;
+  color: #f7f7f7;
   height: 7rem;
   width: 7rem;
   position: fixed;
@@ -757,6 +758,8 @@ body {
   right: 6rem;
   border-radius: 50%;
   z-index: 2000;
+  text-align: center;
+  cursor: pointer;
 }
 .navigation__background {
   height: 6rem;
@@ -767,15 +770,19 @@ body {
   right: 6.5rem;
   background-image: radial-gradient(#7ed56f, #28b485);
   z-index: 1000;
-  transform: scale(80);
+  opacity: 0;
+  transform: scale(1);
+  transition: all 1s cubic-bezier(0.25, 1, 0.5, 1);
 }
 .navigation__nav {
   height: 100vh;
-  width: 100%;
   position: fixed;
   top: 0;
-  right: 0;
+  left: 0;
   z-index: 1500;
+  opacity: 0;
+  width: 0;
+  transition: all 0.45s cubic-bezier(0, 1.23, 0.24, 1.22);
 }
 .navigation__list {
   position: absolute;
@@ -783,10 +790,14 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+  width: 100%;
 }
 .navigation__item {
   list-style: none;
   margin: 3rem;
+}
+.navigation__link-prefix {
+  margin-right: 1.125rem;
 }
 .navigation__link:link, .navigation__link:visited {
   display: inline-block;
@@ -805,8 +816,41 @@ body {
   color: #55c57b;
   transform: translateX(1rem);
 }
-.navigation__link-prefix {
-  margin-right: 1.125rem;
+.navigation__checkbox:checked ~ .navigation__background {
+  opacity: 1;
+  transform: scale(80);
+}
+.navigation__checkbox:checked ~ .navigation__nav {
+  opacity: 1;
+  width: 100%;
+}
+.navigation__icon {
+  position: relative;
+  margin-top: 4.25rem;
+}
+.navigation__icon, .navigation__icon:before, .navigation__icon::after {
+  display: inline-block;
+  width: 3rem;
+  height: 0.2rem;
+  background-color: #28b485;
+}
+.navigation__icon::before, .navigation__icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  transition: all 0.2s;
+}
+.navigation__icon::before {
+  top: -1.5rem;
+}
+.navigation__icon::after {
+  top: -0.75rem;
+}
+.navigation__button:hover .navigation__icon::before {
+  top: -1rem;
+}
+.navigation__button:hover .navigation__icon::after {
+  top: 1rem;
 }
 
 /*# sourceMappingURL=style.css.map */
