@@ -1,16 +1,47 @@
-*,
-*::after,
-*::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit;
-}
-
 html {
   // defines what 1 rem is.
-  font-size: 62.5%;
+  // desktop-default
+  font-size: 62.5%; // 1rem == 10px
+  
+  // min-width: 1800px == 112.5em
+  @include respond(desktop-large) {
+    // (1rem == 12px) = (12/16) = 75%
+    font-size: 75%;
+  }
+  //max-width: 1200px == 75em
+  @include respond(tablet-landscape) {
+    // (1 rem == 9px) = (9/16) = 56.25%
+    font-size: 56.25%;
+  }
+  //max-width: 900px == 56.25em
+  @include respond(tablet-portrait) {
+    // (1 rem = 8px) = (8px/16) = 50%
+    font-size: 50%;
+  }
+  //max-width: 320px == 20em
+  @include respond(phone) {
+    // (1 rem = 7px) = (8px/16) = 43%
+    font-size: 43%;
+  }
 }
 
 body {
   box-sizing: border-box;
+  margin: 0;
+  padding: 2rem;
+
+  @include respond(tablet-portrait) {
+    padding: 0;
+  }
+
+  @include respond(phone) {
+    padding: 0;
+  }
 }
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+

@@ -3,6 +3,10 @@
   padding: 10rem 0;
   font-size: 1.4rem;
 
+  @include respond(tablet-portrait) {
+    padding: 4rem 0;
+  }
+
   &__logo-box {
     // .footer__logo-box .footer__logo is an inline element so it behavew like text.
     text-align: center;
@@ -17,6 +21,12 @@
     border-top: .1rem solid $color-grey-light-1;
     padding: 2rem;
     display: inline-block;
+
+    @include respond(tablet-portrait) {
+      width: 100%;
+      text-align: center;
+      padding: 8rem 0;
+    }
   }
 
   &__list {
@@ -55,5 +65,11 @@
     border-top: .1rem solid $color-grey-light-1;
     padding: 2rem;
     float: right;
+
+    @include respond(tablet-portrait) {
+      width: 100%;
+      text-align: center;
+      padding: 8rem 0;
+    }
   }
 }

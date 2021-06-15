@@ -1,17 +1,47 @@
-*,
-*::after,
-*::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit;
-}
-
 html {
   font-size: 62.5%;
+}
+@media (min-width: 112.5em) {
+  html {
+    font-size: 75%;
+  }
+}
+@media (max-width: 75em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+@media (max-width: 56.25em) {
+  html {
+    font-size: 50%;
+  }
+}
+@media (max-width: 20em) {
+  html {
+    font-size: 43%;
+  }
 }
 
 body {
   box-sizing: border-box;
+  margin: 0;
+  padding: 2rem;
+}
+@media (max-width: 56.25em) {
+  body {
+    padding: 0;
+  }
+}
+@media (max-width: 20em) {
+  body {
+    padding: 0;
+  }
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
 }
 
 @keyframes moveInLeft {
@@ -67,7 +97,6 @@ body {
   font-size: 1.6rem;
   line-height: 1.7;
   color: #777;
-  padding: 3rem;
 }
 
 .heading-primary {
@@ -88,12 +117,32 @@ body {
   /*animation-delay: 3s;*/
   /*animation-iteration-count: 2;*/
 }
+@media (max-width: 56.25em) {
+  .heading-primary--main {
+    letter-spacing: 2.5rem;
+  }
+}
+@media (max-width: 20em) {
+  .heading-primary--main {
+    letter-spacing: 1.2rem;
+  }
+}
 .heading-primary--sub {
   display: block;
   font-size: 2rem;
   font-weight: 400;
   letter-spacing: 1.6rem;
   animation: moveInRight 0.8s ease-out;
+}
+@media (max-width: 56.25em) {
+  .heading-primary--sub {
+    letter-spacing: 2.5rem;
+  }
+}
+@media (max-width: 20em) {
+  .heading-primary--sub {
+    letter-spacing: 0.75rem;
+  }
 }
 
 .heading-secondary {
@@ -114,6 +163,16 @@ body {
 .heading-secondary:hover {
   transform: skewY(2deg) skewX(15deg) scale(1.1);
   text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+@media (max-width: 56.25em) {
+  .heading-secondary {
+    font-size: 3rem;
+  }
+}
+@media (max-width: 20em) {
+  .heading-secondary {
+    font-size: 2.5rem;
+  }
 }
 
 .heading-tertiary {
@@ -227,6 +286,25 @@ body {
   -o-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 }
+@media (max-width: 56.25em) {
+  .header {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+    -moz-clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+    -ms-clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+    -o-clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+  }
+}
+@media (max-width: 20em) {
+  .header {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 90vh, 0 100%);
+    -moz-clip-path: polygon(0 0, 100% 0, 100% 90vh, 0 100%);
+    -ms-clip-path: polygon(0 0, 100% 0, 100% 90vh, 0 100%);
+    -o-clip-path: polygon(0 0, 100% 0, 100% 90vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 90vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 90vh, 0 100%);
+  }
+}
 .header__logo-box {
   position: absolute;
   top: 4rem;
@@ -248,6 +326,12 @@ body {
   max-width: 114rem;
   margin: 0 auto;
 }
+@media (max-width: 56.25em) {
+  .row {
+    max-width: 50rem;
+    padding: 0 3rem;
+  }
+}
 .row:not(:last-child) {
   margin-bottom: 8rem;
 }
@@ -261,6 +345,16 @@ body {
 }
 .row [class^=col-]:not(:last-child) {
   margin-right: 6rem;
+}
+@media (max-width: 56.25em) {
+  .row [class^=col-]:not(:last-child) {
+    margin-bottom: 6rem;
+  }
+}
+@media (max-width: 56.25em) {
+  .row [class^=col-] {
+    width: 80% !important;
+  }
 }
 .row .col-1-of-2 {
   width: calc((100% - 6rem) / 2);
@@ -704,6 +798,11 @@ body {
   padding: 10rem 0;
   font-size: 1.4rem;
 }
+@media (max-width: 56.25em) {
+  .footer {
+    padding: 4rem 0;
+  }
+}
 .footer__logo-box {
   text-align: center;
   margin-bottom: 8rem;
@@ -715,6 +814,13 @@ body {
   border-top: 0.1rem solid #f7f7f7;
   padding: 2rem;
   display: inline-block;
+}
+@media (max-width: 56.25em) {
+  .footer__navigation {
+    width: 100%;
+    text-align: center;
+    padding: 8rem 0;
+  }
 }
 .footer__list {
   list-style: none;
@@ -744,6 +850,13 @@ body {
   padding: 2rem;
   float: right;
 }
+@media (max-width: 56.25em) {
+  .footer__copyright {
+    width: 100%;
+    text-align: center;
+    padding: 8rem 0;
+  }
+}
 
 .navigation__checkbox {
   display: none;
@@ -761,6 +874,12 @@ body {
   text-align: center;
   cursor: pointer;
   box-shadow: 0rem 0.1rem 0.6rem rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 56.25em) {
+  .navigation__button {
+    right: 10rem;
+    top: 3rem;
+  }
 }
 .navigation__background {
   height: 6rem;

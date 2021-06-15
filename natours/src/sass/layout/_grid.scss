@@ -1,10 +1,19 @@
 .row {
-  max-width: $grid-with; // standard: 1140px , rem value = 140px/10rem_base = 114rem
-  // background-color: #eee;
+  // standard: 1140px , rem value = 140px/10rem_base = 114rem
+  max-width: $grid-with;
   margin: 0 auto;
+
+  @include respond(tablet-portrait){
+    max-width: 50rem;
+    padding: 0 3rem;
+  }
   
   &:not(:last-child) {
     margin-bottom: $gutter-vertical;
+
+    @include respond(tablet-portait) {
+      margin-bottom: $gutter-vertical-small;
+    }
   }
 
   @include clearfix;
@@ -14,6 +23,14 @@
 
     &:not(:last-child) {
       margin-right: $gutter-horizontal;
+
+      @include respond(tablet-portrait) {
+        margin-bottom: $gutter-vertical-small;
+      }
+    }
+
+    @include respond(tablet-portrait) {
+      width: 80% !important;
     }
   }
   
