@@ -870,4 +870,53 @@ body {
   transform: rotate(225deg);
 }
 
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 5000;
+}
+.popup__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  background-color: #fff;
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
+  border-radius: 0.3rem;
+  display: table;
+  overflow: hidden;
+}
+.popup__left {
+  width: 33.33%;
+  display: table-cell;
+  vertical-align: middle;
+}
+.popup__right {
+  width: 66.66%;
+  display: table-cell;
+  vertical-align: middle;
+  padding: 5rem 5rem;
+}
+.popup__img {
+  display: block;
+  width: 100%;
+}
+.popup__text {
+  font-size: 1.4rem;
+  margin-bottom: 4rem;
+  column-count: 2;
+  column-gap: 4rem;
+  column-rule: 0.2rem solid #eee;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  -o-hyphens: auto;
+  hyphens: auto;
+}
+
 /*# sourceMappingURL=style.css.map */
