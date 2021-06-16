@@ -11,6 +11,15 @@
   opacity: 0;
   visibility: hidden;
 
+  @supports(backdrop-filter: blur(1rem)) or (-webkit-backdrop-filter: blur(1rem)) {
+    -webkit-backdrop-filter: blur(1rem);
+    -ms-backdrop-filter: blur(1rem);
+    -moz-backdrop-filter: blur(1rem);
+    -o-backdrop-filter: blur(1rem);
+    backdrop-filter: blur(1rem);
+    background-color: rgba($color-black, .8);
+  }
+
   // transition for popup appearance
   &:target {
     // Triggered when url is #popup
@@ -96,3 +105,6 @@
     hyphens: auto;
   }
 }
+
+
+

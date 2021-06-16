@@ -17,6 +17,8 @@
 
   // Dots Per Inxh (Pixel density ratio)
   @media (min-resolution: 192dpi) and (max-width: 37.5em),
+         // Safari version of min-resolution
+         (-webkit-min-device-pixel-ratio: 2),
          (min-width: 125em) {
     background-image: linear-gradient(
       315deg,

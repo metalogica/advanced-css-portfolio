@@ -4,14 +4,18 @@
   "description": "Natours landing page",
   "main": "index.js",
   "scripts": {
-    "sass:compile": "sass sass/main.scss ../dist/css/style.css",
-    "sass:watch": "onchange sass/**/*.scss -- npm run sass:compile"
+    "sass:compile": "node-sass sass/main.scss ../dist/css/style.css",
+    "sass:watch": "node-sass sass/main.scss ../dist/css/style.css -w",
+    "sass:dev": "sass-watch & live-server ../dist",
+    "sass:concat": "concat -o ../dist/css/style.concat.css ../dist/fonts/font-icons.css ../dist/css/style.css",
+    "sass:prefix": "postcss --use autoprefixer -b 'last 10 versions' ../dist/css/style.concat.css -o ../dist/css/style.prefix.css"
   },
   "author": "metalogica",
   "license": "ISC",
   "devDependencies": {
-    "node-sass": "^6.0.0",
-    "onchange": "^7.1.0"
+    "autoprefixer": "^10.2.6",
+    "concat": "^1.0.3",
+    "node-sass": "^6.0.0"
   },
   "dependencies": {}
 }
