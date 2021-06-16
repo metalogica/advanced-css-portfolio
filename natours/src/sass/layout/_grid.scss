@@ -14,6 +14,10 @@
     @include respond(tablet-portait) {
       margin-bottom: $gutter-vertical-small;
     }
+
+    @include respond(portrait) {
+      margin-bottom: 1rem;
+    }
   }
 
   @include clearfix;
@@ -26,6 +30,10 @@
 
       @include respond(tablet-portrait) {
         margin-bottom: $gutter-vertical-small;
+      }
+
+      @include respond(phone) {
+        margin-bottom: 0.5rem;
       }
     }
 

@@ -20,7 +20,7 @@
     box-shadow: 0rem 0.1rem 0.6rem rgba(0,0,0,0.1);
 
     @include respond(tablet-portrait) {
-      right: 10rem;
+      right: 4rem;
       top: 3rem
     }
   }
