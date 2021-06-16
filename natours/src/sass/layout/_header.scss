@@ -15,6 +15,16 @@
   -o-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 
+  // Dots Per Inxh (Pixel density ratio)
+  @media (min-resolution: 192dpi) and (max-width: 37.5em),
+         (min-width: 125em) {
+    background-image: linear-gradient(
+      315deg,
+      rgba($color-primary-light, 0.6),
+      rgba($color-primary-dark, 0.6)),
+      url(../img/hero-small.jpg); /* gradient (top, left, bottom) */
+  }
+
   @include respond(tablet-portrait) {
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
     -moz-clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
